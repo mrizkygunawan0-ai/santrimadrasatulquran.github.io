@@ -1,0 +1,481 @@
+body{
+  margin:0;
+  font-family:Segoe UI, sans-serif;
+  background:linear-gradient(135deg,#0f172a,#0b1120);
+  color:white;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}
+
+h1,H2{
+  text-align:center;
+  margin-bottom:20px;
+  font-weight:600;
+}
+
+img {
+  max-width: 10%;
+  display: block;
+  margin: 10px auto 20px;
+  filter: drop-shadow(0 0 15px #00eaff);
+}
+/* ================= SELECT PREMIUM ================= */
+
+select{
+  width:100%;
+  max-width:300px;
+  padding:10px 14px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.1);
+  background:#1e293b;
+  color:white;
+  font-size:14px;
+  font-weight: bold;
+  outline:none;
+  cursor:pointer;
+  transition:0.3s ease;
+  appearance:none;
+}
+
+/* Custom arrow */
+select{
+  background-image:url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat:no-repeat;
+  background-position:right 10px center;
+  background-size:16px;
+}
+
+select:hover{
+  border-color:#3b82f6;
+}
+
+select:focus{
+  border-color:#22c55e;
+  box-shadow:0 0 0 3px rgba(34,197,94,0.3);
+}
+
+/* ================= INFO BOX ================= */
+
+.info{
+  background:#1e293b;
+  padding:20px;
+  border-radius:15px;
+  margin-top:10px;
+  align-items:center;
+  text-align:center;
+}
+
+#lokasiText{
+  font-size:16px;
+  opacity:0.8;
+  text-align:center;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color:#facc15;
+}
+
+#tanggalText{
+  font-size:14px;
+  opacity:0.7;
+  margin-bottom:10px;
+  text-align:center;
+}
+
+.countdown{
+  font-size:16px;
+  font-weight:bold;
+  margin-top:15px;
+  color:#facc15;
+  text-align:center;
+}
+
+/* ================= WAKTU CARD ================= */
+
+.waktu-container{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-top:20px;
+  padding:20px;
+  background:linear-gradient(90deg,#3b0d0d,#1e1b3a);
+  border-radius:18px;
+}
+
+.waktu-card{
+  flex:1;
+  min-width:100px;
+  background:#0f172a;
+  padding:20px;
+  border-radius:14px;
+  text-align:center;
+  border:2px solid transparent;
+  transition:0.3s ease;
+}
+
+.waktu-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.label{
+  display:block;
+  font-size:13px;
+  opacity:0.7;
+  margin-bottom:8px;
+}
+
+.time{
+  font-size:24px;
+  font-weight:bold;
+}
+
+/* ================= WARNA KHUSUS ================= */
+
+.imsak-card{ border-color:#f59e0b; }
+.imsak-card .time{ color:#f59e0b; }
+
+.subuh-card{ border-color:#3b82f6; }
+.subuh-card .time{ color:#3b82f6; }
+
+.dzuhur-card{ border-color:#facc15; }
+.dzuhur-card .time{ color:#facc15; }
+
+.ashar-card{ border-color:#f43f5e; }
+.ashar-card .time{ color:#f43f5e; }
+
+.maghrib-card{ border-color:#f97316; }
+.maghrib-card .time{ color:#f97316; }
+
+.isya-card{ border-color:#a855f7; }
+.isya-card .time{ color:#a855f7; }
+
+/* ================= TABLE ================= */
+
+.jadwal-card{
+  background:#0f172a;
+  padding:20px;
+  border-radius:15px;
+  margin-top:25px;
+}
+
+.table-wrapper{
+  overflow-x:auto;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:800px;
+}
+
+th,td{
+  padding:10px;
+  text-align:center;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  font-size:14px;
+}
+
+thead{
+  background:linear-gradient(90deg,#3b1d1d,#1e293b);
+}
+
+tbody tr:hover{
+  background:rgba(255,255,255,0.05);
+}
+
+.today{
+  background:#1e293b;
+  border-left:4px solid #22c55e;
+}
+
+.next-prayer{
+  animation: glow 1.5s infinite alternate;
+  border-color:#22c55e !important;
+}
+
+@keyframes glow{
+  from{
+    box-shadow:0 0 5px #22c55e;
+  }
+  to{
+    box-shadow:0 0 20px #22c55e;
+  }
+}
+
+/* ================= BUTTON PRINT ================= */
+
+.btn-print{
+  background:linear-gradient(90deg,#22c55e,#16a34a);
+  border:none;
+  padding:10px 18px;
+  border-radius:8px;
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s ease;
+}
+
+.btn-print:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* ================= MODE PRINT ================= */
+
+@media print{
+
+  body{
+    background:white !important;
+    color:black !important;
+  }
+
+  /* sembunyikan elemen tidak perlu */
+  select,
+  .btn-print,
+  .info,
+  .countdown,
+  .waktu-container,
+  h1{
+    display:none !important;
+  }
+
+  .print-header{
+    text-align:center;
+    margin-bottom:15px;
+  }
+
+  #logo{
+    max-width:70px;
+    margin:auto;
+    display:block;
+  }
+
+  #printLokasi{
+    font-size:14px;
+    margin-top:5px;
+  }
+
+  .jadwal-card{
+    background:white !important;
+    box-shadow:none !important;
+    padding:0;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:11px; /* mengecilkan font */
+    min-width:100% !important; /* hilangkan 800px */
+  }
+
+  th,td{
+    border:1px solid #ccc;
+    padding:6px;
+  }
+
+  th{
+    background:#e5e7eb !important;
+  }
+
+  footer{
+    display:none !important;
+  }
+
+}
+@page{
+  size:A4 portrait;
+  margin:10mm;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;   
+  align-items: center;       
+  margin-top: 20px;
+}
+
+.footer-photo{
+  min-width: 30%;
+  width:70px;
+  height:150px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #22c55e;
+  box-shadow:0 0 15px #22c55e;
+  margin-bottom:8px;
+}
+
+footer .footer-copyright-wrapper {
+  width: 100%;
+  text-align: center;        
+}
+
+footer a,
+footer p,
+footer .footer-copyright-link {
+  color: #ffffff !important;        
+  text-decoration: none !important; 
+}
+
+footer a:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+footer .footer-copyright-text {
+  text-align: center;
+  color: #fff;
+}
+
+/* ================= MOBILE TABLET ================= */
+
+@media (max-width:768px){
+
+  .container{
+    padding:15px;
+  }
+
+  h1{
+    font-size:22px;
+  }
+
+  h2{
+    font-size:18px;
+  }
+
+  img{
+    max-width:80px;
+  }
+
+  select{
+    max-width:100%;
+    font-size:14px;
+  }
+
+  .info{
+    padding:15px;
+  }
+
+  .waktu-container{
+    gap:10px;
+    padding:15px;
+  }
+
+  .waktu-card{
+    min-width:45%;
+    padding:15px;
+  }
+
+  .time{
+    font-size:20px;
+  }
+
+  table{
+    font-size:13px;
+    min-width:600px;
+  }
+
+}
+
+
+/* ================= MOBILE PHONE ================= */
+
+@media (max-width:480px){
+
+  h1{
+    font-size:20px;
+  }
+
+  h2{
+    font-size:16px;
+  }
+
+  img{
+    max-width:70px;
+  }
+
+  .container{
+    padding:10px;
+  }
+
+  select{
+    font-size:13px;
+    padding:8px;
+  }
+
+  .info{
+    padding:12px;
+  }
+
+  .waktu-container{
+    flex-direction:column;
+    gap:12px;
+  }
+
+  .waktu-card{
+    width:90%;
+    min-width:80%;
+  }
+
+  .label{
+    font-size:12px;
+  }
+
+  .time{
+    font-size:20px;
+  }
+
+  .jadwal-card{
+    padding:12px;
+  }
+
+  table{
+    font-size:12px;
+    min-width:550px;
+  }
+
+  th,td{
+    padding:6px;
+  }
+
+  .btn-print{
+    width:100%;
+    margin-top:10px;
+  }
+  @media (max-width:480px){
+
+  .info{
+    padding:15px;
+    text-align:center;
+    align-items:center;
+  }
+
+  #lokasiText{
+    font-size:15px;
+  }
+
+  #tanggalText{
+    font-size:13px;
+  }
+
+  .footer-photo{
+    width:50px;
+    height:100px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid #22c55e;
+    box-shadow:0 0 10px #22c55e;
+    margin-bottom:6px;
+  }
+
+  .footer-copyright-text{
+    font-size:12px;
+    padding:0 10px;
+    line-height:1.4;
+  }
+}
