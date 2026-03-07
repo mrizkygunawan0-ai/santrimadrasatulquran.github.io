@@ -69,6 +69,16 @@ select:focus{
   text-align:center;
 }
 
+#jam{
+  text-align:center;
+  font-size:32px;
+  font-weight:bold;
+  letter-spacing:2px;
+  margin-bottom:15px;
+  color:#22c55e;
+  text-shadow:0 0 10px rgba(34,197,94,0.7);
+}
+
 #lokasiText{
   font-size:16px;
   opacity:0.8;
