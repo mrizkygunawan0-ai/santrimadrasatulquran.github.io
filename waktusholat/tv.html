@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<title>TV Mode - Jadwal Sholat Indonesia</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/css/select2.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/tv.css">
+
+</head>
+
+<body class="tv-mode">
+
+<div class="container">
+
+<h1>🕌 Jadwal Sholat Indonesia</h1>
+
+<select id="pilihKota"></select>
+
+<div class="info">
+
+<div id="jam"></div>
+<div id="lokasiText">Memuat lokasi...</div>
+<div id="tanggalText"></div>
+
+<div class="waktu-container">
+
+<div class="waktu-card imsak-card">
+<span class="label">Imsak</span>
+<span class="time" id="imsak"></span>
+</div>
+
+<div class="waktu-card subuh-card">
+<span class="label">Subuh</span>
+<span class="time" id="subuh"></span>
+</div>
+
+<div class="waktu-card dzuhur-card">
+<span class="label">Dzuhur</span>
+<span class="time" id="dzuhur"></span>
+</div>
+
+<div class="waktu-card ashar-card">
+<span class="label">Ashar</span>
+<span class="time" id="ashar"></span>
+</div>
+
+<div class="waktu-card maghrib-card">
+<span class="label">Maghrib</span>
+<span class="time" id="maghrib"></span>
+</div>
+
+<div class="waktu-card isya-card">
+<span class="label">Isya</span>
+<span class="time" id="isya"></span>
+</div>
+
+</div>
+
+<div id="countdown" class="countdown"></div>
+
+</div>
+
+<div class="running-text">
+  <div id="runningPengumuman" class="running-content"></div>
+</div>
+
+<div id="footerPhoto" style="display:none;"></div>
+<a id="footer" style="display:none;"></a>
+<h2 id="judulBulan" style="display:none;"></h2>
+
+<div class="jadwal-card" style="display:none;">
+<table id="tabelJadwal">
+<tbody></tbody>
+</table>
+</div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/js/select2.min.js"></script>
+<script src="js/praytimes2.js"></script>
+<script src="js/tv.js"></script>
+</body>
+</html>
